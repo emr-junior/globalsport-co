@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: globalsport-co
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "1"
+      - key: DATABASE_URL
+        sync: false
+      - key: BASE_URL
+        sync: false
+      - key: SUPPORT_EMAIL
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false

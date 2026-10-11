@@ -1,0 +1,24 @@
+{
+  "name": "globalsport-co",
+  "version": "1.0.0",
+  "description": "GlobalSport Co. - sporting goods ecommerce platform (storefront, admin, chat, AI assistant)",
+  "main": "src/server.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node src/server.js",
+    "migrate": "node scripts/migrate.js",
+    "seed": "node scripts/seed.js",
+    "setup": "node scripts/migrate.js && node scripts/seed.js",
+    "create-admin": "node scripts/create-staff.js",
+    "reset-password": "node scripts/reset-password.js",
+    "test": "node --test --test-concurrency=1 \"tests/*.test.js\"",
+    "audit": "npm audit --omit=dev"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.3.0",
+    "express": "^5.0.0",
+    "pg": "^8.11.0"
+  }
+}
